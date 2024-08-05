@@ -7,7 +7,9 @@ using UnityEngine;
 public class InteractableData : ICloneable {
     public string name;
     public int id;
+    public Sprite sprite;
     public string description;
+    public bool defaultSelected;
 
     public object Clone() {
         InteractableData cloneData = new InteractableData {
