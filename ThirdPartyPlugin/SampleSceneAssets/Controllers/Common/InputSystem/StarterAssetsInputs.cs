@@ -15,19 +15,6 @@ namespace StarterAssets {
         [Header("Mouse Cursor Settings")]
         public bool cursorLocked = true;
         public bool cursorInputForLook = true;
-        [SerializeField] GameObject _mobileController;
-
-        private void Awake() {
-#if UNITY_EDITOR_WIN || UNITY_EDITOR_64
-			cursorLocked = false;
-			cursorInputForLook = false;
-			_mobileController.SetActive(true);
-#else
-            cursorLocked = false;
-            cursorInputForLook = false;
-            _mobileController.SetActive(true);
-#endif
-        }
 
         public void OnMove(InputValue value) {
             MoveInput(value.Get<Vector2>());
