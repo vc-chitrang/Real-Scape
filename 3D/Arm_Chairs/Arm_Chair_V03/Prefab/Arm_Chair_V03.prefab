@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3810548054012311265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5534400825729253359}
+  - component: {fileID: 4947541216738723407}
+  - component: {fileID: 4792606720439884499}
+  - component: {fileID: 8270916460244885531}
+  m_Layer: 0
+  m_Name: Arm_Chair_V03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5534400825729253359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810548054012311265}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4947541216738723407
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810548054012311265}
+  m_Mesh: {fileID: 762735284779384848, guid: 2d1246faf9e54f64a922821ccf331f0d, type: 3}
+--- !u!23 &4792606720439884499
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810548054012311265}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 3fb14c6e38df20940aa9986a85ca00ec, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8270916460244885531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810548054012311265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59113db07a377454fae5a69399771035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    name: Arm_Chair_V03
+    id: 3
+    sprite: {fileID: 21300000, guid: c88e7559e4009134b894e9dfe2e74005, type: 3}
+    description: Arm_Chair_V03 Description
+    defaultSelected: 0
+    materialInformation:
+    - material: {fileID: 2100000, guid: 3fb14c6e38df20940aa9986a85ca00ec, type: 2}
+      thumbnails: {fileID: 21300000, guid: c88e7559e4009134b894e9dfe2e74005, type: 3}
+    - material: {fileID: 2100000, guid: b4ae64846eef81c4abe1834c2846df5d, type: 2}
+      thumbnails: {fileID: 21300000, guid: 7d34b0bebf7ddaa44b216801af862341, type: 3}
+    - material: {fileID: 2100000, guid: 2f6a1c298eeff60418c179fb36f854de, type: 2}
+      thumbnails: {fileID: 21300000, guid: a5d2dfcc8693b6a47bb771641afc4c9b, type: 3}
+    - material: {fileID: 2100000, guid: bd342c2784d80534b949a5c22c0af650, type: 2}
+      thumbnails: {fileID: 21300000, guid: 94f3b476e4bd32e4dbe3a533b0258163, type: 3}
