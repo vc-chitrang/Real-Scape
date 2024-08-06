@@ -17,5 +17,6 @@ public class UIManager : MonoBehaviour {
             _controllerPanel.SetActive(isEnable);
             _controlToggleText.text = isEnable ? "Disable Android Control" : "Enable Android Control";
         });
+        _controlToggle.onValueChanged.Invoke(true);
     }
 }
