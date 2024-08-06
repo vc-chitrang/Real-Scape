@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -24,11 +23,11 @@ public class InteractableListManagerUI : MonoBehaviour {
     private void InitUI() {
         for (int i = 0; i < _interactableObjectsList.Count; i++) {
             InteractablUI _interactableUI = Instantiate(_interactableUIPrefab, _content);
-            _interactableUI.options = _interactableObjectsList[i].GetOptions();
+            _interactableUI.totalAssetCount = _interactableObjectsList[i].GetTotalAssetsCount();
             _interactableUI.SelectedModelIndex = 0;
 
             InteractableObject interactableObject = _interactableObjectsList[i];
-            _interactableUI.onSelectionUpdate += interactableObject.onSelectionUpdate;
+            _interactableUI.loadAssetAction += interactableObject.LoadAsset;
         }
     }
 }

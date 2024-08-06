@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,8 +10,9 @@ public class InteractablUI : MonoBehaviour {
     [SerializeField] private Button _previousButton;
 
     [SerializeField] private TextMeshProUGUI _information;
-    public List<InteractableBase> options = new List<InteractableBase>();
-    public Action<int> onSelectionUpdate;
+    public Action<int> loadAssetAction;
+
+    internal int totalAssetCount;
 
     private int _selectedModelIndex = 0;
     public int SelectedModelIndex {
@@ -25,7 +24,7 @@ public class InteractablUI : MonoBehaviour {
             RefreshNextPreviousButton();
             UpdateUI();
 
-            onSelectionUpdate?.Invoke(_selectedModelIndex);
+            loadAssetAction?.Invoke(_selectedModelIndex);
         }
     }
 
@@ -38,14 +37,19 @@ public class InteractablUI : MonoBehaviour {
     }
 
     public void UpdateUI() {
-        InteractableBase selectedInteractable = options[SelectedModelIndex];
-        if (selectedInteractable != null) {
-            name = selectedInteractable.data.name;
-
-            Image.sprite = selectedInteractable.data.sprite;
-            _information.text = $"{selectedInteractable.data.name}\n" +
-                                $"{selectedInteractable.data.description}";
+        if (totalAssetCount == 0) {
+            return;
         }
+        //TODO: Get All Available Options --->>
+
+        //InteractableBase selectedInteractable = options[SelectedModelIndex];
+        //if (selectedInteractable != null) {
+        //    name = selectedInteractable.data.name;
+
+        //    Image.sprite = selectedInteractable.data.sprite;
+        //    _information.text = $"{selectedInteractable.data.name}\n" +
+        //                        $"{selectedInteractable.data.description}";
+        //}
     }
 
     public void NextSelected() {
@@ -57,8 +61,7 @@ public class InteractablUI : MonoBehaviour {
     }
 
     private void RefreshNextPreviousButton() {
-        _nextButton.gameObject.SetActive(SelectedModelIndex < options.Count - 1);
+        _nextButton.gameObject.SetActive(SelectedModelIndex < totalAssetCount - 1);
         _previousButton.gameObject.SetActive(SelectedModelIndex > 0);
     }
-
 }
