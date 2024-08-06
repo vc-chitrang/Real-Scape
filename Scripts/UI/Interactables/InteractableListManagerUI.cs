@@ -28,6 +28,7 @@ public class InteractableListManagerUI : MonoBehaviour {
 
             InteractableObject interactableObject = _interactableObjectsList[i];
             _interactableUI.loadAssetAction += interactableObject.LoadAsset;
+            interactableObject.onInteractableLoaded += _interactableUI.OnInteractableLoaded;
         }
     }
 }

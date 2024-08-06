@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class InteractableObject : MonoBehaviour {
     private LoadAddressableUsingName _addressableUtility = null;
 
     [SerializeField] private List<InteractableBase> _options = new List<InteractableBase>();
+    public Action<InteractableBase> onInteractableLoaded;
+
     private void Awake() {
         _addressableUtility = GetComponent<LoadAddressableUsingName>();
     }
@@ -30,6 +33,7 @@ public class InteractableObject : MonoBehaviour {
             InteractableBase interactable = _options.Find(o => o.data.name.Contains(assetName));
             if (interactable != null) {
                 interactable.gameObject.SetActive(true);
+                onInteractableLoaded?.Invoke(interactable);
                 Debug.Log($"Loaded Object Selected: {assetName}");
             }
         } else {

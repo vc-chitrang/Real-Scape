@@ -10,7 +10,7 @@ public class InteractablUI : MonoBehaviour {
     [SerializeField] private Button _previousButton;
 
     [SerializeField] private TextMeshProUGUI _information;
-    public Action<int> loadAssetAction;
+    public Action<int> loadAssetAction;    
 
     internal int totalAssetCount;
 
@@ -26,6 +26,12 @@ public class InteractablUI : MonoBehaviour {
 
             loadAssetAction?.Invoke(_selectedModelIndex);
         }
+    }
+
+    private void OnInteractableDownloaded(InteractableBase interactable) {
+        Image.sprite = interactable.data.materialInformation[0].thumbnails;
+        _information.text = $"{interactable.data.name}\n" +
+                            $"{interactable.data.description}";
     }
 
     private void Awake() {
@@ -63,5 +69,11 @@ public class InteractablUI : MonoBehaviour {
     private void RefreshNextPreviousButton() {
         _nextButton.gameObject.SetActive(SelectedModelIndex < totalAssetCount - 1);
         _previousButton.gameObject.SetActive(SelectedModelIndex > 0);
+    }
+
+    public void OnInteractableLoaded(InteractableBase interactableBase) {
+        Image.sprite = interactableBase.data.materialInformation[0].thumbnails;
+        _information.text = $"{interactableBase.data.name}\n" +
+                            $"{interactableBase.data.description}";
     }
 }

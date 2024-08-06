@@ -35,6 +35,8 @@ public class LoadAddressableUsingName : MonoBehaviour {
                 _interactableObject.DisableAllOptions();
                 interactableObject.gameObject.SetActive(true);
 
+                _interactableObject.onInteractableLoaded?.Invoke(interactableObject);
+
                 Debug.Log($"Asset {obj.name} loaded successfully.");
             }
         }
