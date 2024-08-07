@@ -13,10 +13,12 @@ public class LoadAddressableUsingName : MonoBehaviour {
 
     private void Start() {
         _parent = transform;
-        LoadAsset(_assetNames.First());
     }
 
-    internal async void LoadAsset(string assetName) {
+    internal async void LoadAsset(string assetName, Transform _parent = null) {
+        if (_parent == null) {
+            _parent = transform;
+        }
         await AddressablesLoader.InstantiatePrefabAsync(assetName, _parent, OnAssetLoaded, OnPrefabLoadingProgress);
     }
 
@@ -28,6 +30,7 @@ public class LoadAddressableUsingName : MonoBehaviour {
 
     private void OnAssetLoaded(GameObject obj) {
         if (obj != null) {
+            obj.name = obj.name.Replace("(Clone)", ""); //Remove (Clone) Text from object name
             InteractableBase interactableObject = obj.GetComponent<InteractableBase>();
             if (interactableObject != null) {
                 _interactableObject.AddAssetIntoList(interactableObject);

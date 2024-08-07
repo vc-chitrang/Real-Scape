@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 665762282}
   - component: {fileID: 665762281}
   - component: {fileID: 665762280}
-  - component: {fileID: 665762279}
+  - component: {fileID: 665762284}
   m_Layer: 0
   m_Name: Arm_Chairs (1)
   m_TagString: Untagged
@@ -644,19 +644,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &665762279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665762278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f315ec41ef05e374f9ecafe107a5632f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _options: []
 --- !u!114 &665762280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,7 +669,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665762278}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -740,6 +727,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &665762284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665762278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f315ec41ef05e374f9ecafe107a5632f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _options: []
 --- !u!1 &849865851
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
-  m_VerticalFit: 2
+  m_VerticalFit: 1
 --- !u!1 &947338464
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 947338467}
   - component: {fileID: 947338466}
   - component: {fileID: 947338470}
-  - component: {fileID: 947338469}
+  - component: {fileID: 947338471}
   m_Layer: 0
   m_Name: Arm_Chairs
   m_TagString: Untagged
@@ -844,7 +844,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947338464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -902,19 +902,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &947338469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947338464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f315ec41ef05e374f9ecafe107a5632f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _options: []
 --- !u!114 &947338470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,6 +920,19 @@ MonoBehaviour:
   - Arm_Chair_V04
   - Arm_Chair_V05
   - Arm_Chair_V06
+--- !u!114 &947338471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947338464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f315ec41ef05e374f9ecafe107a5632f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _options: []
 --- !u!1 &972817702
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +981,7 @@ GameObject:
   - component: {fileID: 992969526}
   - component: {fileID: 992969525}
   - component: {fileID: 992969524}
-  - component: {fileID: 992969523}
+  - component: {fileID: 992969528}
   m_Layer: 0
   m_Name: Arm_Chairs (2)
   m_TagString: Untagged
@@ -989,19 +989,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &992969523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992969522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f315ec41ef05e374f9ecafe107a5632f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _options: []
 --- !u!114 &992969524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,7 +1014,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992969522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1085,6 +1072,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &992969528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992969522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f315ec41ef05e374f9ecafe107a5632f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _options: []
 --- !u!1 &1025074190
 GameObject:
   m_ObjectHideFlags: 0

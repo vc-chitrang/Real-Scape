@@ -9,13 +9,14 @@ public class InteractableObject : MonoBehaviour {
 
     [SerializeField] private List<InteractableBase> _options = new List<InteractableBase>();
     public Action<InteractableBase> onInteractableLoaded;
+    private string selectedAssetName;
 
     private void Awake() {
         _addressableUtility = GetComponent<LoadAddressableUsingName>();
     }
 
-    public List<InteractableBase> GetOptions() {
-        return _options;
+    private void Start() {
+        LoadAsset(0);
     }
 
     internal void DisableAllOptions() {
@@ -25,21 +26,20 @@ public class InteractableObject : MonoBehaviour {
     public void LoadAsset(int assetIndex) {
         DisableAllOptions();
 
-        string assetName = _addressableUtility.GetAssetName(assetIndex);
-        Debug.Log($"Asset Name: {assetName}");
+        selectedAssetName = _addressableUtility.GetAssetName(assetIndex);
 
         //Check if asset is already Available inside list
-        if (IsAlreadyObjectAvailableInList(assetName)) {
-            InteractableBase interactable = _options.Find(o => o.data.name.Contains(assetName));
+        if (IsAlreadyObjectAvailableInList(selectedAssetName)) {
+            InteractableBase interactable = _options.Find(o => o.data.name.Contains(selectedAssetName));
             if (interactable != null) {
                 interactable.gameObject.SetActive(true);
                 onInteractableLoaded?.Invoke(interactable);
-                Debug.Log($"Loaded Object Selected: {assetName}");
             }
         } else {
             //Load using addressable
-            _addressableUtility.LoadAsset(assetName);
+            _addressableUtility.LoadAsset(selectedAssetName);
         } 
+        Debug.Log($"{selectedAssetName} :::: SELECTED");
     }
 
     public int GetTotalAssetsCount() {
@@ -52,6 +52,21 @@ public class InteractableObject : MonoBehaviour {
 
     private bool IsAlreadyObjectAvailableInList(string assetName) {
         return _options.Any(a => a.data.name.Contains(assetName));
+    }
+
+    private InteractableBase GetInteractableByName(string name) {
+        return _options.Find(o => o.data.name.Contains(name));
+    }
+
+    private InteractableBase GetSelectedInteractable() {
+        return GetInteractableByName(selectedAssetName);
+    }
+
+    internal void OnChangeMaterial(int index) {
+        Furniture selectedFurniture = GetSelectedInteractable() as Furniture;
+        if (selectedFurniture != null) {
+            selectedFurniture.SetMaterial(index);
+        }
     }
 }
 
