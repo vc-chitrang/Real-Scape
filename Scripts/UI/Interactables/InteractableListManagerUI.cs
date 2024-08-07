@@ -27,7 +27,8 @@ public class InteractableListManagerUI : MonoBehaviour {
             _interactableUI.SelectedModelIndex = 0;
 
             InteractableObject interactableObject = _interactableObjectsList[i];
-            _interactableUI.loadAssetAction += interactableObject.LoadAsset;
+            _interactableUI.SetInteractableObject(interactableObject);
+            _interactableUI.AssignLisners();
         }
     }
 }

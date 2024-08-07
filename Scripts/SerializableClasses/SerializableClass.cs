@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +6,6 @@ using UnityEngine;
 public class InteractableData : ICloneable {
     public string name;
     public int id;
-    public Sprite sprite;
     public string description;
     public bool defaultSelected;
     public List<MaterialsData> materialInformation = new List<MaterialsData>();
