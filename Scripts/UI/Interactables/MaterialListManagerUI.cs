@@ -19,20 +19,26 @@ public class MaterialListManagerUI : MonoBehaviour {
             Sprite _materialThumbnail = _materialData.thumbnails;
 
             MaterialUI _materialUI = Instantiate(_materialUIPrefab, _content);
+            _materialUI.Init(this);
             _materialUI.SetIndex(i);
             _materialUI.SetMaterialSprite(_materialThumbnail);
-            _materialUI.SetButtonClickListner((materialIndex) =>{
-                _interactablUI.OnChangeMaterial(materialIndex);
-            });
-
+            _materialUI.SetButtonClickListner((materialIndex, materialThumbnail) =>{
+                _interactablUI.OnChangeMaterial(materialIndex, materialThumbnail);
+            });            
             _materialUIList.Add(_materialUI);
         }
-    }
+    }    
 
     private void ClearContent() {
         _materialUIList.ForEach(materialUI => { 
             Destroy(materialUI.gameObject);
         });
         _materialUIList.Clear();
+    }
+
+    internal void DeSelectAllMaterialUI() {
+        _materialUIList.ForEach(materialUI => {
+            materialUI.SetHighlighter(false);
+        });
     }
 }

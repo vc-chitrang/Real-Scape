@@ -29,8 +29,11 @@ public class LoadAddressableUsingName : MonoBehaviour {
     }
 
     private void OnAssetLoaded(GameObject obj) {
-        if (obj != null) {
-            obj.name = obj.name.Replace("(Clone)", ""); //Remove (Clone) Text from object name
+        if (obj != null) {            
+            string objectName = obj.name;
+            StringUtility.RemoveString("(Clone)", ref objectName); //Remove (Clone) Text from object name
+            obj.name = objectName;
+
             InteractableBase interactableObject = obj.GetComponent<InteractableBase>();
             if (interactableObject != null) {
                 _interactableObject.AddAssetIntoList(interactableObject);

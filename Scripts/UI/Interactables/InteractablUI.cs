@@ -77,8 +77,10 @@ public class InteractablUI : MonoBehaviour {
         _materialListManagerUI.GenerateMaterialOptions(interactableBase.data.materialInformation);
     }
 
-    internal void OnChangeMaterial(int materialIndex) {
+    internal void OnChangeMaterial(int materialIndex, Sprite materialThumbnail) {
         //3D Model Handler
         _interactableObject.OnChangeMaterial(materialIndex);
-    }
+
+        Image.sprite = materialThumbnail;
+    }    
 }

@@ -38,7 +38,8 @@ public class InteractableObject : MonoBehaviour {
         } else {
             //Load using addressable
             _addressableUtility.LoadAsset(selectedAssetName);
-        } 
+        }
+        
         Debug.Log($"{selectedAssetName} :::: SELECTED");
     }
 

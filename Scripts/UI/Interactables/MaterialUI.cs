@@ -5,7 +5,18 @@ using UnityEngine.UI;
 public class MaterialUI : MonoBehaviour {
     private int _index;
     [SerializeField] private Image _image;
-    [SerializeField] private Button _button;
+    [SerializeField] private Image _highlightImage;
+
+    [SerializeField] internal Button _button;
+    private MaterialListManagerUI _materialListManagerUI;
+
+    private void Start() {
+        SetHighlighter(false);
+    }
+
+    internal void Init(MaterialListManagerUI materialListManagerUI) {
+        _materialListManagerUI = materialListManagerUI;
+    }
 
     internal void SetIndex(int index) {
         _index = index;
@@ -15,10 +26,16 @@ public class MaterialUI : MonoBehaviour {
         _image.sprite = sprite;
     }
 
-    internal void SetButtonClickListner(Action<int> action) {
+    internal void SetButtonClickListner(Action<int,Sprite> action) {
         _button.onClick.RemoveAllListeners();
         _button.onClick.AddListener(() => {
-            action?.Invoke(_index);
+            _materialListManagerUI.DeSelectAllMaterialUI();
+            SetHighlighter(true);
+            action?.Invoke(_index, _image.sprite);
         });
+    }
+
+    internal void SetHighlighter(bool isHighlighted) {
+        _highlightImage.gameObject.SetActive(isHighlighted);
     }
 }
