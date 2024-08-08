@@ -39,8 +39,6 @@ public class InteractableObject : MonoBehaviour {
             //Load using addressable
             _addressableUtility.LoadAsset(selectedAssetName);
         }
-        
-        Debug.Log($"{selectedAssetName} :::: SELECTED");
     }
 
     public int GetTotalAssetsCount() {

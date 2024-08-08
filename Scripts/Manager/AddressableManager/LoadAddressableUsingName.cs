@@ -32,6 +32,7 @@ public class LoadAddressableUsingName : MonoBehaviour {
         if (obj != null) {            
             string objectName = obj.name;
             StringUtility.RemoveString("(Clone)", ref objectName); //Remove (Clone) Text from object name
+            
             obj.name = objectName;
 
             InteractableBase interactableObject = obj.GetComponent<InteractableBase>();
