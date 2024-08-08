@@ -1,0 +1,2 @@
+public class Sofa : Furniture {
+}
